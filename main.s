@@ -11,9 +11,10 @@
 
 main:
 	mov 	r5,#0x64
-	mov		r4,text
+	mov		r4,hello
 	mov		r3,#50
 	mov		r12,#100
+	ldrb	r5,[r4]
 	ldrb 	r9,		[r12, r3, LSL #2]
  	B		loop
 
@@ -24,9 +25,11 @@ loop:
 	.ALIGN
 
 .data
-text:
-        .asciz "Hello World!"
-
+;text:
+		;.byte	"Hello World!"
+       ; .asciz "Hello World!"
+hello:
+	.asciz	"Hello"
 
 
 	.end
