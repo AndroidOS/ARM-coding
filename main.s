@@ -12,11 +12,13 @@
 main:
 	mov 	r5,#0x64
 	mov		r4,hello
-	mov		r3,#50
+	mov		r3,number
 	mov		r12,#100
 	ldrb	r5,[r4]
-	ldrb 	r9,		[r12, r3, LSL #2]
- 	B		loop
+	ldrb	r6,[r3]
+
+	lsr r12, r12, #2
+ 	B	loop
 
 loop:
 	add		r5,r5,#1
@@ -26,7 +28,10 @@ loop:
 
 .data
 ;text:
-		;.byte	"Hello World!"
+number:
+	.byte 11,20
+
+
        ; .asciz "Hello World!"
 hello:
 	.asciz	"Hello"
