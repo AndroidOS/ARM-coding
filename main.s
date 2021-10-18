@@ -16,15 +16,18 @@ main:
 	mov		r12,#100
 	ldrb	r5,[r4]
 	ldrb	r6,[r3]
-	mov 	r5,0x20000000
+	mov 	r5,0x10000000
 
 	str		r12,[r5]
 	ldrb	r6,[r5]
-	.ALIGN
-	mov 	r5,0x20000001
+	;.ALIGN
+	add r5,r5,#1
 
+	mov 	r12,#20
 	str		r12,[r5]
 	ldrb	r6,[r5]
+
+	dec		r5
 
 	lsr r12, r12, #2
  	B	loop
