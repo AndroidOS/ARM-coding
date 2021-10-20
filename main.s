@@ -27,7 +27,9 @@ main:
 	str		r12,[r5]
 	ldrb	r6,[r5]
 
-	dec		r5
+	sub r5,#1
+
+	ldrb	r6,[r5]
 
 	lsr r12, r12, #2
  	B	loop
