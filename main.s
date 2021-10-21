@@ -32,6 +32,9 @@ main:
 	ldrb	r6,[r5]
 
 	lsr r12, r12, #2
+Test:
+	cmp r6,#100
+	bne	Test
  	B	loop
 
 loop:
