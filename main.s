@@ -10,7 +10,7 @@
 
 
 main:
-	mov		r4,#number
+	mov	 r4,#string
 
 	mov r1,#4
 Test:
@@ -34,6 +34,10 @@ number:
 
 hello:
 	.asciz	"Hello"
+	.align
+
+string:
+	.string	"Hello"
 
 
 	.end
